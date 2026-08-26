@@ -7,7 +7,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 
 ##  Tecnologías Utilizadas
 * **Hipervisor:** Oracle VirtualBox 7.x
-* **Servidor de Directorio:** Windows Server 2022 (Datacenter / Desktop Experience)
+* **Servidor de Directorio:** Windows Server 2022 (Standard / Desktop Experience)
 * **Cliente:** Windows 10 
 * **Servicios de Red:** Active Directory Domain Services (AD DS), DNS local, DHCP/IP estática
 
