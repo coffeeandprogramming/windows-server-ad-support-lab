@@ -24,7 +24,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 | **SRV-DC01** | Controlador de Dominio (AD/DNS) | 1. NAT<br>2. Red Interna (`lab-red`) | DHCP (Internet)<br>`192.168.10.1` | —<br>`255.255.255.0` | —<br>`127.0.0.1` |
 | **WIN-CLI01** | Estación de Trabajo Cliente | 1. Red Interna (`lab-red`) | `192.168.10.20` *(por configurar)* | `255.255.255.0` | `192.168.10.1` |
 
----
+
 
 ## Fases Implementadas
 
@@ -41,7 +41,20 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
    * **Servidor DNS**
 3. Promoción del servidor a primer Controlador de Dominio raíz de un nuevo bosque (`lab.local`).
 
----
+
+
+## Evidencias
+
+### 1. Configuración de interfaces de red
+![Interfaces de red](docs/img/01-configuracion-adaptadores-ip.png)
+
+### 2. Promoción exitosa a controlador de dominio
+![Promoción AD DS](docs/img/02-promocion-exitosa-dc.png)
+
+### 3. Inicio de sesión en el dominio corporativo
+![Login de dominio](docs/img/03-login-lab-administrator.png)
+
+
 
 ## Troubleshooting
 
