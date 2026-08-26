@@ -60,7 +60,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 ![Promoción AD DS](docs/img/02-promocion-exitosa-dc.png)
 
 ### 3. Inicio de sesión en el dominio corporativo
-![Login de dominio](docs/img/03-login-lab-administrator.jpg)
+![Login de dominio](docs/img/03-login-lab-administrator.jpeg)
 
 ### 4. Estructura OU creada
 ![Estructura ou y usuarios](docs/img/04-estructura-ou-usuarios.png)
