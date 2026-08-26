@@ -51,5 +51,8 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 * **Advertencia de Delegación DNS durante la promoción:**
   * *Observación:* El asistente indica que no se pudo crear una delegación para el servidor DNS autoritativo primario.
   * *Resolución:* Según lo averiguado es el comportamiento estándar esperado al crear el primer controlador de dominio raíz de un bosque nuevo sin infraestructura DNS superior previa.
+* **Falso positivo de "Sin acceso a internet":**
+  * *Observación:* El icono de red indica conectividad limitada/sin acceso, a pesar de que el ping y la navegación web responden con éxito.
+  * *Resolución:* No es una falla real. Se verificó conectividad real mediante comandos en terminal y se confirmó que todo funciona como debe.
 
 ---
