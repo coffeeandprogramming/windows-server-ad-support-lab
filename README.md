@@ -54,13 +54,16 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 ## Evidencias
 
 ### 1. Configuración de interfaces de red
-![Interfaces de red](docs/img/01-configuracion-adaptadores-ip.png)
+![Interfaces de red](docs/img/01-configuracion-adaptadores-ip.jpg)
 
 ### 2. Promoción exitosa a controlador de dominio
 ![Promoción AD DS](docs/img/02-promocion-exitosa-dc.png)
 
 ### 3. Inicio de sesión en el dominio corporativo
-![Login de dominio](docs/img/03-login-lab-administrator.png)
+![Login de dominio](docs/img/03-login-lab-administrator.jpg)
+
+### 4. Estructura OU creada
+![Estructura ou y usuarios](docs/img/04-estructura-ou-usuarios.png)
 
 
 
