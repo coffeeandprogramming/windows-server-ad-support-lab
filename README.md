@@ -54,7 +54,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 ## Evidencias
 
 ### 1. Configuración de interfaces de red
-![Interfaces de red](docs/img/01-configuracion-adaptadores-ip.jpg)
+![Interfaces de red](docs/img/01-configuracion-adaptadores-ip.png)
 
 ### 2. Promoción exitosa a controlador de dominio
 ![Promoción AD DS](docs/img/02-promocion-exitosa-dc.png)
