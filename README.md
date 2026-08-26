@@ -43,6 +43,14 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 
 
 
+### Fase 3: Estructuración de Identidades (OUs, Grupos y Usuarios)
+1. Creación de la Unidad Organizativa raíz (`Empresa-LAB`) para contener la estructura departamental.
+2. Creación de sub-OUs correspondientes a cada área: `IT-Sistemas`, `Ventas`, `RRHH` y `Workstations`.
+3. Creación de grupos de seguridad globales (ej. `GRP_Ventas_Acceso`) para la asignación controlada de permisos.
+4. Creación y asignación de usuarios de prueba con requisitos de cambio de contraseña en el primer inicio de sesión.
+
+
+
 ## Evidencias
 
 ### 1. Configuración de interfaces de red
