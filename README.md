@@ -8,7 +8,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 ##  Tecnologías Utilizadas
 * **Hipervisor:** Oracle VirtualBox 7.x
 * **Servidor de Directorio:** Windows Server 2022 (Standard / Desktop Experience)
-* **Cliente:** Windows 10 
+* **Cliente:** Windows 10 Pro
 * **Servicios de Red:** Active Directory Domain Services (AD DS), DNS local, DHCP/IP estática
 
 
@@ -22,7 +22,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 | Equipo | Rol | Adaptador de Red | Dirección IP | Máscara | DNS Preferido |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **SRV-DC01** | Controlador de Dominio (AD/DNS) | 1. NAT<br>2. Red Interna (`lab-red`) | DHCP (Internet)<br>`192.168.10.1` | —<br>`255.255.255.0` | —<br>`127.0.0.1` |
-| **WIN-CLI01** | Estación de Trabajo Cliente | 1. Red Interna (`lab-red`) | `192.168.10.20` *(por configurar)* | `255.255.255.0` | `192.168.10.1` |
+| **WIN-CLI01** | Estación de Trabajo Cliente | 1. Red Interna (`lab-red`) | `192.168.10.20` | `255.255.255.0` | `192.168.10.1` |
 
 
 
@@ -74,6 +74,15 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 ### 4. Estructura OU creada
 ![Estructura ou y usuarios](docs/img/04-estructura-ou-usuarios.png)
 
+### 5. Unión del cliente al dominio
+![Domain join mensaje de éxito](docs/img/05-cliente-unido-al-dominio.png)
+
+### 6. Inicio de sesión exitoso con usuario de dominio (WIN-CLI01)
+![Login de usuario cliente](docs/img/06-login-usuario-cliente.png)
+
+### 7. Equipo (WIN-CLI01) movido a OU "Workstations"
+![WIN-CLI01 en OU Workstations](docs/img/07-equipo-en-ou.png)
+
 
 
 ## Troubleshooting
@@ -87,5 +96,8 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 * **Falso positivo de "Sin acceso a internet":**
   * *Observación:* El icono de red indica conectividad limitada/sin acceso, a pesar de que el ping y la navegación web responden con éxito.
   * *Resolución:* No es una falla real. Se verificó conectividad real mediante comandos en terminal y se confirmó que todo funciona como debe.
+* **Asignación de nombre genérico en equipo cliente:**
+  * *Observación:* Tras la instalación de Windows 10, la máquina conservó el nombre alfanumérico por defecto (ej. DESKTOP-XXXXXXX), lo cual ensucia el registro en Active Directory.
+  * *Resolución:* Se modificó el nombre del equipo manualmente desde las Propiedades del Sistema (`sysdm.cpl`) a `WIN-CLI01` utilizando credenciales de administrador, y se reinició la máquina virtual para impactar el cambio antes de finalizar la unión al dominio.
 
 ---
