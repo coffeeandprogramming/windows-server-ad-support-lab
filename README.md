@@ -50,6 +50,15 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 4. Creación y asignación de usuarios de prueba con requisitos de cambio de contraseña en el primer inicio de sesión.
 
 
+### Fase 4: Puesta en marcha de máquina cliente y unión al dominio
+
+1. Despliegue de Windows 10 Pro en la máquina virtual cliente.
+2. Asignación de IP estática (192.168.10.20), puerta de enlace (192.168.10.1) y servidor DNS apuntando al Controlador de Dominio.
+3. Cambio de nombre del equipo a `WIN-CLI01` y unión exitosa al dominio `lab.local`.
+4. Primer inicio de sesión en el cliente utilizando las credenciales corporativas del usuario de prueba (`LAB\jgomez`).
+5. Reubicación del objeto de la máquina cliente dentro de la Unidad Organizativa (OU) dedicada `Workstations` desde el DC.
+
+
 
 ## Evidencias
 
