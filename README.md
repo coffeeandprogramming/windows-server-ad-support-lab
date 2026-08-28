@@ -50,6 +50,7 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 4. Creación y asignación de usuarios de prueba con requisitos de cambio de contraseña en el primer inicio de sesión.
 
 
+
 ### Fase 4: Puesta en marcha de máquina cliente y unión al dominio
 
 1. Despliegue de Windows 10 Pro en la máquina virtual cliente.
@@ -57,6 +58,15 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 3. Cambio de nombre del equipo a `WIN-CLI01` y unión exitosa al dominio `lab.local`.
 4. Primer inicio de sesión en el cliente utilizando las credenciales corporativas del usuario de prueba (`LAB\jgomez`).
 5. Reubicación del objeto de la máquina cliente dentro de la Unidad Organizativa (OU) dedicada `Workstations` desde el DC.
+
+
+
+### Fase 5: Recursos Compartidos y Mapeo Automático (GPO)
+
+1. Creación del directorio `C:\Compartido\Ventas` en el Controlador de Dominio.
+2. Configuración de permisos NTFS y de Uso Compartido Avanzado, restringiendo el acceso exclusivamente a los miembros del grupo de seguridad `GRP_Ventas_Acceso`.
+3. Creación de la directiva `GPO_Mapeo_Unidad_Ventas` vinculada a la Unidad Organizativa *Ventas*, configurada para montar automáticamente la ruta de red como la unidad lógica `Z:`.
+4. Ejecución de `gpupdate /force` en el equipo cliente (`WIN-CLI01`) e inicio de sesión con credenciales de usuario (`LAB\jgomez`), verificando el montaje exitoso de la unidad de red.
 
 
 
@@ -83,6 +93,14 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 ### 7. Equipo (WIN-CLI01) movido a OU "Workstations"
 ![WIN-CLI01 en OU Workstations](docs/img/07-equipo-en-ou.png)
 
+### 8. Permisos NTFS aplicados al grupo de seguridad.
+![Permisos NTFS en carpeta Ventas](docs/img/08-permisos-carpeta-ventas.png)
+
+### 9. Configuración de la directiva de mapeo de red en la consola GPMC.
+![Configuración GPO Mapeo](docs/img/09-configuracion-gpo-mapeo.png)
+
+### 10. Validación del mapeo de red automatizado en el equipo cliente.
+![Unidad de red Z mapeada en cliente](docs/img/10-unidad-mapeada-cliente.png)
 
 
 ## Troubleshooting
@@ -99,5 +117,8 @@ Implementación de un entorno corporativo virtualizado para simular la infraestr
 * **Asignación de nombre genérico en equipo cliente:**
   * *Observación:* Tras la instalación de Windows 10, la máquina conservó el nombre alfanumérico por defecto (ej. DESKTOP-XXXXXXX), lo cual ensucia el registro en Active Directory.
   * *Resolución:* Se modificó el nombre del equipo manualmente desde las Propiedades del Sistema (`sysdm.cpl`) a `WIN-CLI01` utilizando credenciales de administrador, y se reinició la máquina virtual para impactar el cambio antes de finalizar la unión al dominio.
+* **Conservación de nombre genérico en el Controlador de Dominio:**
+  * *Observación:* El servidor conservó el hostname generado por defecto por Windows (ej. WIN-3DSQP2FTPGS) tras la instalación del rol de Active Directory y su promoción a DC.
+  * *Resolución:* Se optó por evitar un renombramiento del controlador en caliente.
 
 ---
